@@ -1,0 +1,26 @@
+@font-face
+    font-family: "Inter"
+    src: local("Inter"),
+    src: url("./../fonts/Inter-Regular.ttf") format('truetype')
+    font-weight: 400
+
+@font-face
+    font-family: "Inter"
+    src: local("Inter"),
+    src: url("./../fonts/Inter-Medium.ttf") format('truetype')
+    font-weight: 500
+
+@mixin fontInter($size: false, $color: false, $weight: false, $lh: false)
+    font-family: 'Inter', sans-serif
+    @if $size
+        font-size: $size
+    @if $color 
+        color: $color 
+    @if $weight
+        font-weight: $weight
+    @if $lh
+        line-height: $lh
+
+@mixin s900
+    @media screen and (max-width: 900px)
+        @content

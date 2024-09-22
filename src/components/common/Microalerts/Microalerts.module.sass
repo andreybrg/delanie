@@ -1,0 +1,19 @@
+@use 'assets/style/functions' as f
+@use 'assets/style/variables' as v
+@use 'assets/style/mixins' as m
+    
+.content
+    position: fixed
+    width: 300px
+    right: 40px
+    bottom: 40px
+    z-index: 1000
+    display: flex
+    flex-direction: column
+    row-gap: 5px
+
+.item
+    background-color: v.$black-color
+    @include m.fontInter(14px, #fff, 500, 120%)
+    border-radius: 5px
+    padding: 15px

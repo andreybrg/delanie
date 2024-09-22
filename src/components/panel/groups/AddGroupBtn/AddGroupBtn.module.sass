@@ -1,0 +1,45 @@
+@use 'assets/style/functions' as f
+@use 'assets/style/variables' as v
+@use 'assets/style/mixins' as m
+
+.button
+    width: 26px
+    height: 26px
+    border: none
+    padding: 0
+    margin: 0
+    border-radius: 5px
+    display: flex
+    align-items: center
+    justify-content: center
+    transition: .3s
+    background-color: unset
+    cursor: pointer
+    user-select: none
+    -webkit-user-select: none
+    -moz-user-select: none
+    -ms-user-select: none
+    font-size: 0
+    &_withSpan
+        width: fit-content
+        padding: 0 10px 0 3px
+        column-gap: 5px
+    svg
+        width: 20px
+        height: 20px
+        path
+            transition: .3s
+            fill: v.$main-action-btn-color
+    span
+        @include m.fontInter(13px, v.$main-action-btn-color, 400, 120%)
+        transition: .3s
+    &:hover
+        background-color: v.$main-action-bg-btn-color
+        transition: .3s
+        span
+            color: v.$hover-action-btn-color
+            transition: .3s
+        svg
+            path
+                transition: .3s
+                fill: v.$hover-action-btn-color

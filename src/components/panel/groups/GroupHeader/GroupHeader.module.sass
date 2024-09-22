@@ -1,0 +1,84 @@
+@use 'assets/style/groupColors'
+@use 'assets/style/functions' as f
+@use 'assets/style/variables' as v
+@use 'assets/style/mixins' as m
+
+.header
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    margin: 0 0 15px 0
+    position: relative
+    &_fetching::before
+        content: ''
+        width: 100%
+        height: 100%
+        background-color: rgba(255, 255, 255, 0.4)
+        position: absolute
+        left: 0
+        top: 0
+        z-index: 10
+    &:hover
+        div
+            opacity: 1
+            transition: .3s
+
+.title
+    position: relative
+    cursor: pointer
+    padding: 5px 10px
+    border-radius: 5px
+    box-sizing: border-box
+    @include m.fontInter(13px, false, 500, 120%)
+    white-space: nowrap
+    text-overflow: ellipsis
+    overflow: hidden
+    user-select: none
+    -webkit-user-select: none
+    -moz-user-select: none
+    -ms-user-select: none
+    &_fetching::before
+        content: ""
+        position: absolute
+        left: 0
+        right: 0
+        top: 0
+        bottom: 0
+        margin: auto
+        width: 100%
+        height: 100%
+        border-radius: 5px
+        z-index: 2
+        box-sizing: border-box
+        background-color: rgba(255, 255, 255, .5)
+
+// .lightGray
+//     color: v.$FONT-COLOR-light-gray
+//     background-color: v.$BG-COLOR-light-gray
+// .gray
+//     color: v.$FONT-COLOR-gray
+//     background-color: v.$BG-COLOR-gray
+// .brown
+//     color: v.$FONT-COLOR-brown
+//     background-color: v.$BG-COLOR-brown
+// .orange
+//     color: v.$FONT-COLOR-orange
+//     background-color: v.$BG-COLOR-orange
+// .yellow
+//     color: v.$FONT-COLOR-yellow
+//     background-color: v.$BG-COLOR-yellow
+// .green
+//     color: v.$FONT-COLOR-green
+//     background-color: v.$BG-COLOR-green
+// .blue
+//     color: v.$FONT-COLOR-blue
+//     background-color: v.$BG-COLOR-blue
+// .purple
+//     color: v.$FONT-COLOR-purple
+//     background-color: v.$BG-COLOR-purple
+// .pink
+//     color: v.$FONT-COLOR-pink
+//     background-color: v.$BG-COLOR-pink
+// .red
+//     color: v.$FONT-COLOR-red
+//     background-color: v.$BG-COLOR-red

@@ -1,0 +1,68 @@
+@use 'assets/style/functions' as f
+@use 'assets/style/variables' as v
+@use 'assets/style/mixins' as m
+    
+.authFormContainer
+    width: 300px
+    margin: 0 auto
+    display: flex
+    flex-direction: column
+    align-items: center
+    row-gap: 20px
+
+.mainForm
+    width: 100%
+    form
+        display: flex
+        flex-direction: column
+        row-gap: 25px
+        width: 100%
+.label
+    display: flex
+    flex-direction: column
+    width: 100%
+    display: flex
+    flex-direction: column
+    position: relative
+    input
+        height: 45px
+        width: 100%
+        border: 1px solid v.$black-color
+        border-radius: 5px
+        @include m.fontInter(14px, v.$black-color, 500, 120%)
+        box-sizing: border-box
+        padding: 0 15px
+        outline: none
+.labelTitle
+    @include m.fontInter(13px, v.$black-color, 500, 120%)
+    margin: 0 0 3px 0
+
+.firldError
+    position: absolute
+    left: 0
+    bottom: -16px
+    @include m.fontInter(12px, v.$black-color, 500, 100%)
+    opacity: .7
+
+.switchFormBtn
+    width: fit-content
+    span
+        @include m.fontInter(14px, v.$black-color, 500, 100%)
+        transition: .3s
+    &:hover
+        transition: .3s
+        opacity: .7
+
+.formMessage
+    display: flex
+    border-radius: 5px
+    background-color: v.$BG-COLOR-gray
+    margin: 0 0 25px 0
+    span
+        padding: 10px
+        box-sizing: border-box
+        @include m.fontInter(14px, v.$black-color, 500, 120%)
+
+.title
+    @include m.fontInter(22px, v.$black-color, 500, 120%)
+    align-self: flex-start

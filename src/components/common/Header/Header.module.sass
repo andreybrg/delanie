@@ -1,0 +1,47 @@
+@use 'assets/style/variables' as v
+@use 'assets/style/mixins' as m
+
+.header
+    padding: 20px 0 50px 0
+    display: flex
+    align-items: center
+
+.logo
+    height: 30px
+    font-size: 0
+    img
+        height: 100%
+        width: auto
+
+.controls
+    display: flex
+    align-items: center
+    margin: 0 0 0 auto
+    column-gap: 30px
+
+.controlItem
+    cursor: pointer
+
+.buttons
+    display: flex
+    column-gap: 10px
+.btn
+    display: flex
+    justify-content: center
+    align-items: center
+    border-radius: 5px
+    border: 1px solid v.$black-color
+    box-sizing: border-box
+    height: 30px
+    padding: 0 15px
+    transition: .3s
+    span
+        @include m.fontInter(13px, v.$black-color, 500, 120%)
+    &_solid
+        border: none
+        background-color: v.$theme-color
+        span
+            @include m.fontInter(13px, v.$white-color, 500, 120%)
+        &:hover
+            transition: .3s
+            background-color: darken(v.$theme-color, 20%)

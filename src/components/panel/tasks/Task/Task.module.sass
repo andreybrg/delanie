@@ -1,0 +1,69 @@
+@use 'assets/style/functions' as f
+@use 'assets/style/variables' as v
+@use 'assets/style/mixins' as m
+    
+.task
+    position: relative
+    cursor: pointer
+    display: flex
+    flex-direction: column
+    border: 1px solid v.$border-color
+    border-radius: 5px
+    padding: 10px
+    box-sizing: border-box
+    display: flex
+    flex-direction: column
+    row-gap: 10px
+    transition: .3s
+    div
+        user-select: none
+        -webkit-user-select: none
+        -moz-user-select: none
+        -ms-user-select: none
+        white-space: pre-wrap
+    &:hover
+        border-color: v.$black-color
+        transition: .3s
+        .controls
+            opacity: 1
+            transition: .3s
+    &_fetching
+        &::before
+            content: ''
+            width: 100%
+            height: 100%
+            border-radius: 5px
+            background-color: f.HEXtoRGBA(white, .7)
+            box-sizing: border-box
+            background-image: url("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMOSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQogIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAwIDAiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KICAgIDxwYXRoIGZpbGw9IiMwMDAiIGQ9Ik03Myw1MGMwLTEyLjctMTAuMy0yMy0yMy0yM1MyNywzNy4zLDI3LDUwIE0zMC45LDUwYzAtMTAuNSw4LjUtMTkuMSwxOS4xLTE5LjFTNjkuMSwzOS41LDY5LjEsNTAiPg0KICAgICAgPGFuaW1hdGVUcmFuc2Zvcm0gDQogICAgICAgICBhdHRyaWJ1dGVOYW1lPSJ0cmFuc2Zvcm0iIA0KICAgICAgICAgYXR0cmlidXRlVHlwZT0iWE1MIiANCiAgICAgICAgIHR5cGU9InJvdGF0ZSINCiAgICAgICAgIGR1cj0iMXMiIA0KICAgICAgICAgZnJvbT0iMCA1MCA1MCINCiAgICAgICAgIHRvPSIzNjAgNTAgNTAiIA0KICAgICAgICAgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiIC8+DQogIDwvcGF0aD4NCjwvc3ZnPg==")
+            position: absolute
+            z-index: 100
+            left: 0
+            top: 0
+            background-size: 30px
+            background-repeat: no-repeat
+            background-position: center center
+        &:hover
+            cursor: default
+            border-color: v.$border-color
+            .controls
+                display: none
+    &_onDrag
+        opacity: .1
+
+
+.title
+    @include m.fontInter(16px, v.$black-color, 500, 120%)
+
+.description
+    @include m.fontInter(13px, v.$black-color, 400, 120%)
+    opacity: .8
+
+.controls
+    position: absolute
+    top: auto
+    right: 5px
+    bottom: 5px
+    z-index: 2
+    opacity: 0
+    transition: .3s

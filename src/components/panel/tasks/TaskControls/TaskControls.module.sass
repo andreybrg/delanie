@@ -1,0 +1,20 @@
+@use 'assets/style/functions' as f
+@use 'assets/style/variables' as v
+@use 'assets/style/mixins' as m
+
+.content
+    display: flex
+    align-items: center
+    column-gap: 5px
+    
+.item
+    width: 25px
+    height: 25px
+    display: flex
+    align-items: center
+    justify-content: center
+    background-color: v.$main-action-bg-btn-color
+    border-radius: 5px
+    svg
+        path
+            fill: v.$hover-action-btn-color

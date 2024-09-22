@@ -1,0 +1,58 @@
+@use 'assets/style/functions' as f
+@use 'assets/style/variables' as v
+@use 'assets/style/mixins' as m
+
+.header
+    display: flex
+    justify-content: flex-start
+    margin: 0 0 15px 0
+    position: relative
+.form
+    fieldset
+        padding: 0
+        margin: 0
+        border: none
+    &_fetching
+
+.titleField
+    padding: 0
+    margin: 0
+    width: 100%
+    height: 26px
+    box-sizing: border-box
+    @include m.fontInter(13px, v.$black-color, 500, 120%)
+    border: none
+    outline: none
+
+.submitBtn
+    display: none
+
+.title
+    position: relative
+    background-color: black
+    padding: 5px 10px
+    border-radius: 5px
+    box-sizing: border-box
+    @include m.fontInter(13px, v.$white-color, 500, 120%)
+    user-select: none
+    -webkit-user-select: none
+    -moz-user-select: none
+    -ms-user-select: none
+    &::before
+        content: ""
+        position: absolute
+        left: 0
+        right: 0
+        top: 0
+        bottom: 0
+        margin: auto
+        width: 100%
+        height: 100%
+        border-radius: 5px
+        z-index: 2
+        box-sizing: border-box
+        background-color: rgba(255, 255, 255, .5)
+
+.lightGray
+    color: v.$FONT-COLOR-light-gray
+    background-color: v.$BG-COLOR-light-gray

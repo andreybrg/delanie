@@ -1,0 +1,60 @@
+@use 'assets/style/functions' as f
+@use 'assets/style/variables' as v
+@use 'assets/style/mixins' as m
+@use 'assets/style/groupColors'
+    
+.container
+    width: 150px
+    position: absolute
+    right: 0
+    top: 31px
+    padding: 2px
+    box-sizing: border-box
+    border: 1px solid v.$hover-action-btn-color
+    border-radius: 5px
+    background-color: white
+    z-index: 100
+
+.content
+    display: flex
+    flex-direction: column
+    row-gap: 2px
+
+.list
+    display: flex
+    flex-direction: column
+
+.button
+    cursor: pointer
+    width: 100%
+    display: flex
+    align-items: center
+    border: none
+    padding: 0 0 0 5px
+    margin: 0
+    background: unset
+    height: 26px
+    border-radius: 5px
+    transition: .3s
+    &:hover
+        background-color: v.$main-action-bg-btn-color
+        transition: .3s
+    svg
+        margin: 0 5px 0 0
+    span
+        @include m.fontInter(14px, v.$black-color, 500, 120%)
+    &[disabled]
+        opacity: .4
+    
+.colorPreview
+    width: 20px
+    height: 20px
+    display: flex
+    justify-content: center
+    align-items: center
+    margin: 0 5px 0 0
+    &__preview
+        width: 16px
+        height: 16px
+        border-radius: 5px
+        border: 1px solid black
